@@ -547,7 +547,7 @@ local chooseInterfaceOptions
 local firstloop=1
 
 # Find network interfaces whose state is UP, so as to skip virtual interfaces and the loopback interface
-availableInterfaces=$(ip -o link | awk '/state UKNOWN/ {print $2}' | cut -d':' -f1 | cut -d'@' -f1)
+availableInterfaces=$(ip -o link | awk '/state UNKNOWN/ {print $2}' | cut -d':' -f1 | cut -d'@' -f1)
 
 if [ -z "$availableInterfaces" ]; then
     echo "::: Could not find any active network interface, exiting"
