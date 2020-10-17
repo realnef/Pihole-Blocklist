@@ -998,8 +998,8 @@ cloneOrUpdateRepos(){
 
 installPiVPN(){
 	$SUDO mkdir -p /etc/pivpn/
-	askWhichVPN
-
+	echo "::: Checking for existing base files..."
+	if isRepo "${1}"; then
 	if [ "$VPN" = "openvpn" ]; then
 
 		pivpnDEV="tun0"
